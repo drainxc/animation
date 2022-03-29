@@ -9,7 +9,7 @@ const GlovalStyle = createGlobalStyle`
       align-items: center;
       justify-content: center;
       width: 100%;
-      height: 4000px;
+      height: 2500px;
       font-size: 100px;
       font-family: "Pacifico", cursive;
       -webkit-user-select: none;
