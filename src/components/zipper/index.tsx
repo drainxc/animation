@@ -11,14 +11,13 @@ export default function Zipper() {
 
   for (let i = 0; i < spanAmount; i++) {}
 
-  function showCurtainEffect(end: number, start: number, scroll: number) {
-    const gap = (end - start) / spanAmount;
-
-    spans.forEach((i: number) => {
-      const s = start + gap * i;
-      const e = s + gap * 10;
-      const ratio = (scroll - s) / (e - s);
+  function showCurtainEffect(scroll: number) {
+    spans.forEach(() => {
+      const start = 0;
+      const end = 3000;
+      const ratio = (scroll - start) / (end - start);
       const value = ratio > 1 ? 1.05 : ratio < 0 ? 0 : ratio;
+      console.log(value);
 
       setDivTransfrom(`scale(1.05, ${value})`);
     });
@@ -28,16 +27,17 @@ export default function Zipper() {
     let scroll: number =
       document.documentElement.scrollTop || document.body.scrollTop;
 
-    showCurtainEffect(0, 3000, scroll);
+    showCurtainEffect(scroll);
   };
 
   return (
     <>
       <S.MainDiv>
-        {spans.map(() => (
+        {spans.map((item: any, index: number) => (
           <div
             style={{
               transform: divTransfrom,
+              transition: `all ${index * 0.1}s ease`,
               width: style,
               height: "100%",
               backgroundColor: "#D0D0D0",
@@ -46,7 +46,7 @@ export default function Zipper() {
           ></div>
         ))}
       </S.MainDiv>
-      <S.Title>SCROLL</S.Title>
+      <S.Title>Lee DongHyeon</S.Title>
     </>
   );
 }
