@@ -26,10 +26,10 @@ export default function Zipper() {
   onscroll = function () {
     const scroll: number = document.documentElement.scrollTop;
 
-    if (scroll >= 1563) {
+    if (scroll >= 2000) {
       setPosition("absolute");
-      setTitleTop(`${1563 + 460}px`);
-      setTop("1563px")
+      setTitleTop(`${2000 + 460}px`);
+      setTop("2000px")
     } else {
       setPosition("fixed");
       setTitleTop("460px");
