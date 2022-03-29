@@ -9,13 +9,12 @@ const GlovalStyle = createGlobalStyle`
       align-items: center;
       justify-content: center;
       width: 100%;
-      height: 2500px;
-      font-size: 100px;
-      font-family: "Pacifico", cursive;
+      height: 5000px;
       -webkit-user-select: none;
       -moz-user-select: none; 
       -ms-user-select: none;
       user-select: none;
+      overflow-x: hidden;
     }
     body::-webkit-scrollbar {
       /* display: none; */
