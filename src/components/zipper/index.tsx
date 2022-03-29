@@ -8,6 +8,9 @@ export default function Zipper() {
   });
   const style = `${document.body.clientWidth / spanAmount}px`;
   const [divTransfrom, setDivTransfrom] = useState("scale(1.05, 0)");
+  const [position, setPosition] = useState("fixed");
+  const [top, setTop] = useState("0px")
+  const [titleTop, setTitleTop] = useState("460px");
 
   function scrollAnimation(scroll: number) {
     spans.forEach(() => {
@@ -22,12 +25,22 @@ export default function Zipper() {
 
   onscroll = function () {
     const scroll: number = document.documentElement.scrollTop;
-    scrollAnimation(scroll);
+
+    if (scroll >= 1563) {
+      setPosition("absolute");
+      setTitleTop(`${1563 + 460}px`);
+      setTop("1563px")
+    } else {
+      setPosition("fixed");
+      setTitleTop("460px");
+      setTop("0px");
+      scrollAnimation(scroll);
+    }
   };
 
   return (
     <>
-      <S.MainDiv>
+      <S.MainDiv position={position} top={top}>
         {spans.map((item: number) => (
           <div
             style={{
@@ -41,7 +54,9 @@ export default function Zipper() {
           ></div>
         ))}
       </S.MainDiv>
-      <S.Title>Lee DongHyeon</S.Title>
+      <S.Title position={position} top={titleTop}>
+        Lee DongHyeon
+      </S.Title>
     </>
   );
 }
