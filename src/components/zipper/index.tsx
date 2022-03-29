@@ -3,8 +3,8 @@ import * as S from "./style";
 
 export default function Zipper() {
   const spanAmount: number = 20;
-  const spans: any = Array.from({ length: spanAmount }, () => {
-    return "";
+  const spans: any = Array.from({ length: spanAmount }, (t, i) => {
+    return i;
   });
   const style = `${document.body.clientWidth / spanAmount}px`;
   const [divTransfrom, setDivTransfrom] = useState("scale(1.05, 0)");
@@ -28,11 +28,11 @@ export default function Zipper() {
   return (
     <>
       <S.MainDiv>
-        {spans.map((item: any, index: number) => (
+        {spans.map((item: number) => (
           <div
             style={{
               transform: divTransfrom,
-              transition: `all ${index * 0.07}s ease`,
+              transition: `all ${item * 0.07}s ease`,
               width: style,
               height: "100%",
               backgroundColor: "#D0D0D0",
