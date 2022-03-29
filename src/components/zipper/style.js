@@ -16,7 +16,6 @@ export const Title = styled.p`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: clamp(3vw, 10vw, 5rem);
   mix-blend-mode: difference;
   color: #f2f2f2;
   text-align: center;
