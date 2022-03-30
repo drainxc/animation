@@ -19,3 +19,20 @@ export const Title = styled.div`
   font-size: 100px;
 `;
 
+export const Move = styled.div`
+  background-color: blue;
+  position: absolute;
+  height: 75px;
+  width: 75px;
+  right: 0;
+  animation: move 3s ease-in-out infinite;
+
+  @keyframes move {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-800px);
+    }
+  }
+`;
