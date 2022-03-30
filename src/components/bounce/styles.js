@@ -75,4 +75,27 @@ export const Down = styled.div`
   width: 75px;
   right: 0;
   bottom: 0;
+
+  animation: down 3s cubic-bezier(0.4, 0, 1, 1) infinite;
+
+  @keyframes down {
+    0% {
+      transform: translateY(-25rem);
+    }
+    20%,
+    35% {
+      transform: translateY(0);
+    }
+    50%,
+    65% {
+      transform: translateY(15rem);
+    }
+    80%,
+    95% {
+      transform: translateY(25rem);
+    }
+    100% {
+      transform: translateY(15rem);
+    }
+  }
 `;
