@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const MainDiv = styled.div`
-  position: ${(props) => props.position};
+  position: ${(props) => props.position || "fixed"};
   z-index: -1;
   left: 0;
-  top: ${(props) => props.top};
+  top: ${(props) => props.top || 0};
   width: 100%;
   height: 100%;
   background-color: #222222;
@@ -12,9 +12,9 @@ export const MainDiv = styled.div`
 `;
 
 export const Title = styled.p`
-  position: ${(props) => props.position};
+  position: ${(props) => props.position || "fixed"};
   left: 50%;
-  top: ${(props) => props.top};
+  top: ${(props) => props.top || "50%"};
   transform: translate(-50%, -50%);
   font-size: 100px;
   font-family: "Pacifico", cursive;
