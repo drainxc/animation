@@ -67,3 +67,12 @@ export const Up = styled.div`
     }
   }
 `;
+
+export const Down = styled.div`
+  background-color: yellow;
+  position: absolute;
+  height: 75px;
+  width: 75px;
+  right: 0;
+  bottom: 0;
+`;
