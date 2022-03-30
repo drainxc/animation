@@ -6,7 +6,9 @@ export default function Bounce() {
       <S.BackGround>
         <S.Move>
           <S.Up>
-            <S.Down></S.Down>
+            <S.Down>
+              <S.Ball></S.Ball>
+            </S.Down>
           </S.Up>
         </S.Move>
       </S.BackGround>
