@@ -24,8 +24,8 @@ export const Move = styled.div`
   position: absolute;
   height: 75px;
   width: 75px;
-  right: 0;
-  bottom: 0;
+  right: 20%;
+  top: 33%;
   animation: move 3s ease-in-out infinite;
 
   @keyframes move {
@@ -33,7 +33,7 @@ export const Move = styled.div`
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-800px);
+      transform: translateX(-650px);
     }
   }
 `;
@@ -57,11 +57,10 @@ export const Up = styled.div`
     50% {
       transform: translateY(-15rem);
     }
-    65%,
-    80% {
-      transform: translateY(-25rem);
+    66% {
+      transform: translateY(-24rem);
     }
-    90%,
+    88%,
     100% {
       transform: translateY(-27rem);
     }
@@ -90,12 +89,9 @@ export const Down = styled.div`
     65% {
       transform: translateY(15rem);
     }
-    80%,
-    95% {
-      transform: translateY(25rem);
-    }
+    88%,
     100% {
-      transform: translateY(15rem);
+      transform: translateY(40rem);
     }
   }
 `;
