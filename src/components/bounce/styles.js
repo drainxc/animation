@@ -6,8 +6,8 @@ export const BackGround = styled.div`
   top: 50%;
   transform: translate(-50%, -50%);
   height: 700px;
-  width: 800px;
-  background-color: grey;
+  width: 780px;
+  background-color: whitesmoke;
 `;
 
 export const Title = styled.div`
@@ -20,12 +20,12 @@ export const Title = styled.div`
 `;
 
 export const Move = styled.div`
-  background-color: blue;
+  /* background-color: blue; */
   position: absolute;
   height: 75px;
   width: 75px;
   right: 20%;
-  top: 33%;
+  top: 35%;
   animation: move 3s ease-in-out infinite;
 
   @keyframes move {
@@ -39,7 +39,7 @@ export const Move = styled.div`
 `;
 
 export const Up = styled.div`
-  background-color: green;
+  /* background-color: green; */
   position: absolute;
   height: 75px;
   width: 75px;
@@ -68,7 +68,7 @@ export const Up = styled.div`
 `;
 
 export const Down = styled.div`
-  background-color: yellow;
+  /* background-color: yellow; */
   position: absolute;
   height: 75px;
   width: 75px;
@@ -79,7 +79,7 @@ export const Down = styled.div`
 
   @keyframes down {
     0% {
-      transform: translateY(-25rem);
+      transform: translateY(-30rem);
     }
     20%,
     35% {
@@ -91,7 +91,36 @@ export const Down = styled.div`
     }
     88%,
     100% {
-      transform: translateY(40rem);
+      transform: translateY(45rem);
+    }
+  }
+`;
+
+export const Ball = styled.div`
+  border-radius: 50%;
+  background-color: black;
+  position: absolute;
+  height: 75px;
+  width: 75px;
+  right: 0;
+  bottom: 0;
+
+  animation: ball 3s infinite;
+
+  @keyframes ball {
+    0%,
+    19%,
+    25%,
+    49%,
+    55%,
+    79%,
+    85%,
+    100% {
+      transform: scale(1);
+    }
+    20%,
+    50% {
+      transform: scale(1.1, 0.8);
     }
   }
 `;
