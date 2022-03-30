@@ -5,7 +5,9 @@ export default function Bounce() {
     <>
       <S.BackGround>
         <S.Move>
-          <S.Up></S.Up>
+          <S.Up>
+            <S.Down></S.Down>
+          </S.Up>
         </S.Move>
       </S.BackGround>
       <S.Title>Lee DongHyeon</S.Title>
