@@ -37,21 +37,23 @@ export default function Zipper() {
 
   return (
     <>
-      <S.MainDiv>
-        {spans.map((item: number) => (
-          <div
-            style={{
-              transform: divTransfrom,
-              transition: `all ${item * 0.07}s ease`,
-              width: style,
-              height: "100%",
-              backgroundColor: "#D0D0D0",
-              display: "inline-flex",
-            }}
-          ></div>
-        ))}
-      </S.MainDiv>
-      <S.Title>Lee DongHyeon</S.Title>
+      <S.BackGround>
+        <S.MainDiv>
+          {spans.map((item: number) => (
+            <div
+              style={{
+                transform: divTransfrom,
+                transition: `all ${item * 0.07}s ease`,
+                width: style,
+                height: "100%",
+                backgroundColor: "#D0D0D0",
+                display: "inline-flex",
+              }}
+            ></div>
+          ))}
+        </S.MainDiv>
+        <S.Title>Lee DongHyeon</S.Title>
+      </S.BackGround>
     </>
   );
 }
