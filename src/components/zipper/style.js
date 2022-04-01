@@ -11,6 +11,11 @@ export const MainDiv = styled.div`
   display: flex;
 `;
 
+export const BackGround = styled.body`
+  width: 100%;
+  height: 2500px;
+`;
+
 export const Title = styled.p`
   position: ${(props) => props.position || "fixed"};
   left: 50%;
@@ -18,6 +23,7 @@ export const Title = styled.p`
   transform: translate(-50%, -50%);
   font-size: 100px;
   font-family: "Pacifico", cursive;
+  font-weight: 500;
   mix-blend-mode: difference;
   color: #f2f2f2;
   text-align: center;
