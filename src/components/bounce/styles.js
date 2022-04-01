@@ -1,13 +1,25 @@
 import styled from "styled-components";
 
-export const BackGround = styled.div`
+export const Background = styled.body`
+  position: fixed;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #222222;
+  display: flex;
+`;
+
+export const BallAnimation = styled.div`
   position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   height: 700px;
   width: 780px;
-  background-color: whitesmoke;
+  background-color: #D0D0D0;
+  overflow: hidden;
 `;
 
 export const Title = styled.div`
@@ -16,7 +28,9 @@ export const Title = styled.div`
   top: 50%;
   transform: translate(-50%, -50%);
   font-family: "Pacifico", cursive;
+  font-weight: 500;
   font-size: 100px;
+  color: #222222;
 `;
 
 export const Move = styled.div`
@@ -25,7 +39,7 @@ export const Move = styled.div`
   height: 75px;
   width: 75px;
   right: 20%;
-  top: 35%;
+  top: 36%;
   animation: move 3s ease-in-out infinite;
 
   @keyframes move {
@@ -98,7 +112,7 @@ export const Down = styled.div`
 
 export const Ball = styled.div`
   border-radius: 50%;
-  background-color: black;
+  background-color: #222222;
   position: absolute;
   height: 75px;
   width: 75px;
@@ -120,6 +134,10 @@ export const Ball = styled.div`
     }
     20%,
     50% {
+      transform: scale(1.2, 0.7);
+    }
+    23%,
+    53% {
       transform: scale(1.1, 0.8);
     }
   }
