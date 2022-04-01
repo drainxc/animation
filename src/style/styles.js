@@ -8,8 +8,6 @@ const GlovalStyle = createGlobalStyle`
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 100%;
-      height: 5000px;
       -webkit-user-select: none;
       -moz-user-select: none; 
       -ms-user-select: none;
