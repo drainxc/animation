@@ -3,10 +3,7 @@ import * as S from "./styles";
 export default function Bounce() {
   return (
     <>
-      <S.Background
-        width={document.body.clientWidth}
-        height={document.body.clientHeight}
-      >
+      <S.Background>
         <S.BallAnimation>
           <S.Move>
             <S.Up>
