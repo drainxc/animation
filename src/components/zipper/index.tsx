@@ -2,11 +2,11 @@ import { useState } from "react";
 import * as S from "./style";
 
 export default function Zipper() {
-  const divAmount: number = 20;
+  const divAmount: number = 20; // div 개수
   const divs: any = Array.from({ length: divAmount }, (t, i) => {
     return i;
-  });
-  const style = `${document.body.clientWidth / divAmount}px`;
+  }); // map함수용 div 배열 생성
+  const style = `${document.body.clientWidth / divAmount}px`; // div 가로 크기 조정
   const [divTransfrom, setDivTransfrom] = useState("scale(1.05, 0)");
   //  const [position, setPosition] = useState("fixed");
   //  const [top, setTop] = useState(0);
@@ -18,12 +18,12 @@ export default function Zipper() {
       const ratio = (scroll - start) / (end - start);
       const value = ratio > 1 ? 1.05 : ratio < 0 ? 0 : ratio;
 
-      setDivTransfrom(`scale(1.05, ${value})`);
+      setDivTransfrom(`scale(1.05, ${value})`); // 스크롤 시 div 세로 크기 조정
     });
   }
 
   onscroll = function () {
-    const scroll: number = document.documentElement.scrollTop;
+    const scroll: number = document.documentElement.scrollTop; // 스크롤 감지
 
     // if (scroll >= 2000) {
     //   setPosition("absolute");
@@ -49,7 +49,7 @@ export default function Zipper() {
                 backgroundColor: "#D0D0D0",
                 display: "inline-flex",
               }}
-            ></div>
+            ></div> // 애니메이션
           ))}
         </S.MainDiv>
         <S.Title>Lee DongHyeon</S.Title>
