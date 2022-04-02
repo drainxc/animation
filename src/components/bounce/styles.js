@@ -49,7 +49,7 @@ export const Move = styled.div`
     100% {
       transform: translateX(-650px);
     }
-  }
+  } // 왼쪽으로 650px만큼 움직이기
 `;
 
 export const Up = styled.div`
@@ -78,7 +78,7 @@ export const Up = styled.div`
     100% {
       transform: translateY(-27rem);
     }
-  }
+  } // 시간에 따라 위로 점프하기
 `;
 
 export const Down = styled.div`
@@ -107,7 +107,7 @@ export const Down = styled.div`
     100% {
       transform: translateY(45rem);
     }
-  }
+  } // 점프한 후 떨어지기
 `;
 
 export const Ball = styled.div`
@@ -131,7 +131,7 @@ export const Ball = styled.div`
     85%,
     100% {
       transform: scale(1);
-    }
+    } // 납작해진 후 다시 펴지기
     20%,
     50% {
       transform: scale(1.2, 0.7);
@@ -139,6 +139,6 @@ export const Ball = styled.div`
     23%,
     53% {
       transform: scale(1.1, 0.8);
-    }
+    } // 떨어진 직후에 공 납작해지기
   }
 `;
