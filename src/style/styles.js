@@ -4,10 +4,6 @@ import reset from "styled-reset";
 const GlovalStyle = createGlobalStyle`
     ${reset};
     body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
       -webkit-user-select: none;
       -moz-user-select: none; 
       -ms-user-select: none;
