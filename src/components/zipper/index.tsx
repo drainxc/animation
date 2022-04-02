@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { zipperScroll } from "../../lib/function/zipperAnimation";
 import * as S from "./style";
 
 export default function Zipper() {
@@ -9,18 +10,7 @@ export default function Zipper() {
   const style = `${document.body.clientWidth / divAmount}px`; // div 가로 크기 조정
   const [divTransfrom, setDivTransfrom] = useState("scale(1.05, 0)");
   //  const [position, setPosition] = useState("fixed");
-  //  const [top, setTop] = useState(0);
-
-  function scrollAnimation(scroll: number) {
-    divs.forEach(() => {
-      const start = 0;
-      const end = 1550;
-      const ratio = (scroll - start) / (end - start);
-      const value = ratio > 1 ? 1.05 : ratio < 0 ? 0 : ratio;
-
-      setDivTransfrom(`scale(1.05, ${value})`); // 스크롤 시 div 세로 크기 조정
-    });
-  }
+  //  const [top, setTop] = useState(0);``````
 
   onscroll = function () {
     const scroll: number = document.documentElement.scrollTop; // 스크롤 감지
@@ -32,7 +22,9 @@ export default function Zipper() {
     //   setPosition("fixed");
     //   setTop(0);
     // }
-    scrollAnimation(scroll);
+    divs.forEach(() => {
+      setDivTransfrom(`scale(1.05, ${zipperScroll(scroll)})`); // 스크롤 시 div 세로 크기 조정
+    });
   };
 
   return (
