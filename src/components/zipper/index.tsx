@@ -2,17 +2,17 @@ import { useState } from "react";
 import * as S from "./style";
 
 export default function Zipper() {
-  const spanAmount: number = 20;
-  const spans: any = Array.from({ length: spanAmount }, (t, i) => {
+  const divAmount: number = 20;
+  const divs: any = Array.from({ length: divAmount }, (t, i) => {
     return i;
   });
-  const style = `${document.body.clientWidth / spanAmount}px`;
+  const style = `${document.body.clientWidth / divAmount}px`;
   const [divTransfrom, setDivTransfrom] = useState("scale(1.05, 0)");
   //  const [position, setPosition] = useState("fixed");
   //  const [top, setTop] = useState(0);
 
   function scrollAnimation(scroll: number) {
-    spans.forEach(() => {
+    divs.forEach(() => {
       const start = 0;
       const end = 1550;
       const ratio = (scroll - start) / (end - start);
@@ -39,7 +39,7 @@ export default function Zipper() {
     <>
       <S.BackGround>
         <S.MainDiv>
-          {spans.map((item: number) => (
+          {divs.map((item: number) => (
             <div
               style={{
                 transform: divTransfrom,
