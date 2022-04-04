@@ -16,11 +16,10 @@ export const ErrorDiv = styled.div`
     font-weight: 500;
     font-size: 100px;
     color: #f2f2f2;
-    text-shadow: -7px 0 1px cyan, 7px 0 1px red;
+    text-shadow: -5px 0 1px cyan, 5px 0 1px red;
+    animation-delay: 0.75s;
   }
 `;
-
-export const Glitch = styled.div``;
 
 export const Bottom = styled.div`
   animation: glitchBottom 2.4s linear infinite;
@@ -56,11 +55,11 @@ export const Title = styled.div`
   @keyframes glitch {
     2%,
     46% {
-      transform: translate(2px, 0);
+      transform: translate(7px, 0);
     }
     4%,
     42% {
-      transform: translate(-2px, 0);
+      transform: translate(-7px, 0);
     }
     44% {
       transform: translate(0, 0);
@@ -99,6 +98,20 @@ export const Top = styled.div`
     }
     100% {
       font-family: "Rubik Glitch", cursive;
+    }
+  }
+`;
+
+export const TitleContents = styled.span`
+  animation: blink-effect 0.5s infinite;
+  @keyframes blink-effect {
+    50% {
+      background-color: rgb(
+        ${(props) => props.color1},
+        ${(props) => props.color2},
+        ${(props) => props.color3}
+      );
+      opacity: 0;
     }
   }
 `;
