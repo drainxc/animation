@@ -1,10 +1,15 @@
 import { useEffect, useState } from "react";
 import { getRandomIntInclusive } from "../../lib/function/random";
 import * as S from "./styles";
-import { color } from "../../lib/export/data";
 
 export default function Error() {
   const title: string = "Lee DongHyeon";
+  const color = Array.from({ length: 9 }, (t, i) => {
+    return {
+      color: 0,
+    };
+  });
+
   const [random, setRandom] = useState<any>(color);
   const [count, setCount] = useState(0);
 
