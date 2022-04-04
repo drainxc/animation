@@ -102,16 +102,10 @@ export const Top = styled.div`
   }
 `;
 
-export const TitleContents = styled.span`
-  animation: blink-effect 0.5s infinite;
-  @keyframes blink-effect {
-    50% {
-      background-color: rgb(
-        ${(props) => props.color1},
-        ${(props) => props.color2},
-        ${(props) => props.color3}
-      );
-      opacity: 0;
-    }
-  }
+export const Contents = styled.span`
+  background-color: rgb(
+    ${(props) => props.color1},
+    ${(props) => props.color2},
+    ${(props) => props.color3}
+  );
 `;
