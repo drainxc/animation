@@ -5,8 +5,9 @@ export const ErrorDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  left: 50%;
-  top: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: #222222;
 
   div {
     position: absolute;
@@ -14,13 +15,15 @@ export const ErrorDiv = styled.div`
     width: 700px;
     font-weight: 500;
     font-size: 100px;
-    color: #222222;
-    text-shadow: -6px 0 1px cyan, 6px 0 1px red;
+    color: #f2f2f2;
+    text-shadow: -7px 0 1px cyan, 7px 0 1px red;
   }
 `;
 
+export const Glitch = styled.div``;
+
 export const Bottom = styled.div`
-  animation: glitchBottom 1.4s linear infinite;
+  animation: glitchBottom 2.4s linear infinite;
   clip-path: polygon(0 67%, 200% 67%, 200% 200%, 0 200%);
   -webkit-clip-path: polygon(0 67%, 200% 67%, 200% 200%, -100% 200%);
 
@@ -36,11 +39,17 @@ export const Bottom = styled.div`
     44% {
       transform: translate(-26px, 4px);
     }
+    72% {
+      font-family: "Press Start 2P", cursive;
+    }
+    100% {
+      font-family: "Rubik Glitch", cursive;
+    }
   }
 `;
 
 export const Title = styled.div`
-  animation: glitch 1s linear infinite;
+  animation: glitch 2.2s linear infinite;
   clip-path: polygon(0 33%, 200% 0, 200% 67%, 0 67%);
   -webkit-clip-path: polygon(0 33%, 200% 0, 200% 67%, 0 67%);
 
@@ -56,17 +65,23 @@ export const Title = styled.div`
     44% {
       transform: translate(0, 0);
     }
+    72% {
+      font-family: "Henny Penny", cursive;
+    }
+    100% {
+      font-family: "Rubik Glitch", cursive;
+    }
   }
 `;
 
 export const Top = styled.div`
-  animation: glitchTop 1s linear infinite;
+  animation: glitchTop 2s linear infinite;
   clip-path: polygon(0 0, 200% 0, 200% 33%, 0 33%);
   -webkit-clip-path: polygon(0 0, 200% 0, 200% 33%, 0 33%);
 
   @keyframes glitchTop {
-    0%,
-    48% {
+    4%,
+    46% {
       transform: translate(-3px, 0);
     }
     6%,
@@ -77,7 +92,13 @@ export const Top = styled.div`
       transform: translate(-5px, 0);
     }
     44% {
-      transform: translate(22px, -7px);
+      transform: translate(0px, -7px);
+    }
+    72% {
+      font-family: "Press Start 2P", cursive;
+    }
+    100% {
+      font-family: "Rubik Glitch", cursive;
     }
   }
 `;
