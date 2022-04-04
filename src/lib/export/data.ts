@@ -1,1 +1,11 @@
-export const color = [0, 128, 255];
+export const color = [
+  { color: 0 },
+  { color: 0 },
+  { color: 0 },
+  { color: 0 },
+  { color: 0 },
+  { color: 0 },
+  { color: 0 },
+  { color: 0 },
+  { color: 0 },
+];
