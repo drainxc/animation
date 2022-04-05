@@ -7,7 +7,12 @@ export const ErrorDiv = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: #222222;
+  background-color: rgb(
+    ${(props) => props.bgColor1},
+    ${(props) => props.bgColor2},
+    ${(props) => props.bgColor3}
+  );
+  /* animation: glitchErrorPage 0.2s linear infinite; */
 
   div {
     position: absolute;
@@ -19,12 +24,36 @@ export const ErrorDiv = styled.div`
     text-shadow: -5px 0 1px cyan, 5px 0 1px red;
     animation-delay: 0.75s;
   }
+
+  @keyframes glitchErrorPage {
+    0% {
+      transform: translate(0, 0);
+    }
+    10%,
+    50%,
+    40% {
+      transform: translate(5px, 0);
+    }
+    20%,
+    60%,
+    70%,
+    90% {
+      transform: translate(0, 5px);
+    }
+    30% {
+      transform: translate(0, -20px);
+    }
+    80% {
+      transform: translate(-40px, 0);
+    }
+  }
 `;
 
 export const Bottom = styled.div`
   animation: glitchBottom 2.4s linear infinite;
   clip-path: polygon(0 67%, 200% 67%, 200% 200%, 0 200%);
   -webkit-clip-path: polygon(0 67%, 200% 67%, 200% 200%, -100% 200%);
+  mix-blend-mode: difference;
 
   @keyframes glitchBottom {
     2%,
@@ -51,6 +80,7 @@ export const Title = styled.div`
   animation: glitch 2.2s linear infinite;
   clip-path: polygon(0 33%, 200% 0, 200% 67%, 0 67%);
   -webkit-clip-path: polygon(0 33%, 200% 0, 200% 67%, 0 67%);
+  mix-blend-mode: multiply;
 
   @keyframes glitch {
     2%,
@@ -77,6 +107,7 @@ export const Top = styled.div`
   animation: glitchTop 2s linear infinite;
   clip-path: polygon(0 0, 200% 0, 200% 33%, 0 33%);
   -webkit-clip-path: polygon(0 0, 200% 0, 200% 33%, 0 33%);
+  mix-blend-mode: hard-light;
 
   @keyframes glitchTop {
     4%,
