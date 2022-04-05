@@ -7,8 +7,8 @@ export default function Zipper() {
   const divs: any = Array.from({ length: divAmount }, (t, i) => {
     return i;
   }); // map함수용 div 배열 생성
-  const style = `${document.body.clientWidth / divAmount}px`; // div 가로 크기 조정
-  const [divTransfrom, setDivTransfrom] = useState("scale(1.05, 0)");
+  const style: string = `${document.body.clientWidth / divAmount}px`; // div 가로 크기 조정
+  const [divTransfrom, setDivTransfrom] = useState<string>("scale(1.05, 0)");
   //  const [position, setPosition] = useState("fixed");
   //  const [top, setTop] = useState(0);``````
 
