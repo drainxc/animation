@@ -7,11 +7,7 @@ export const ErrorDiv = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: rgb(
-    ${(props) => props.bgColor1},
-    ${(props) => props.bgColor2},
-    ${(props) => props.bgColor3}
-  );
+
   /* animation: glitchErrorPage 0.2s linear infinite; */
 
   div {
@@ -19,9 +15,9 @@ export const ErrorDiv = styled.div`
     font-family: "Pacifico", cursive;
     width: 700px;
     font-weight: 500;
-    font-size: 100px;
     color: #f2f2f2;
-    text-shadow: -5px 0 1px cyan, 5px 0 1px red;
+    font-size: 100px;
+    text-shadow: -7px 0 1px cyan, 7px 0 1px red;
     animation-delay: 0.75s;
   }
 
@@ -52,8 +48,11 @@ export const ErrorDiv = styled.div`
 export const Bottom = styled.div`
   animation: glitchBottom 2.4s linear infinite;
   clip-path: polygon(0 67%, 200% 67%, 200% 200%, 0 200%);
-  -webkit-clip-path: polygon(0 67%, 200% 67%, 200% 200%, -100% 200%);
+  -webkit-clip-path: clip-path;
   mix-blend-mode: difference;
+
+  span {
+  }
 
   @keyframes glitchBottom {
     2%,
@@ -70,16 +69,17 @@ export const Bottom = styled.div`
     72% {
       font-family: "Press Start 2P", cursive;
     }
+    12%,
     100% {
       font-family: "Rubik Glitch", cursive;
     }
   }
 `;
 
-export const Title = styled.div`
-  animation: glitch 2.2s linear infinite;
+export const Center = styled.div`
+  animation: glitch 1.5s linear infinite;
   clip-path: polygon(0 33%, 200% 0, 200% 67%, 0 67%);
-  -webkit-clip-path: polygon(0 33%, 200% 0, 200% 67%, 0 67%);
+  -webkit-clip-path: clip-path;
   mix-blend-mode: multiply;
 
   @keyframes glitch {
@@ -97,6 +97,7 @@ export const Title = styled.div`
     72% {
       font-family: "Henny Penny", cursive;
     }
+    24%,
     100% {
       font-family: "Rubik Glitch", cursive;
     }
@@ -106,7 +107,7 @@ export const Title = styled.div`
 export const Top = styled.div`
   animation: glitchTop 2s linear infinite;
   clip-path: polygon(0 0, 200% 0, 200% 33%, 0 33%);
-  -webkit-clip-path: polygon(0 0, 200% 0, 200% 33%, 0 33%);
+  -webkit-clip-path: clip-path;
   mix-blend-mode: hard-light;
 
   @keyframes glitchTop {
@@ -124,19 +125,18 @@ export const Top = styled.div`
     44% {
       transform: translate(0px, -7px);
     }
+    30%,
     72% {
       font-family: "Press Start 2P", cursive;
     }
+    80%,
     100% {
       font-family: "Rubik Glitch", cursive;
     }
   }
 `;
 
-export const Contents = styled.span`
-  background-color: rgb(
-    ${(props) => props.color1},
-    ${(props) => props.color2},
-    ${(props) => props.color3}
-  );
+export const Title = styled.div`
+  mix-blend-mode: normal;
+  opacity: 0.5;
 `;
