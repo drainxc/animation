@@ -4,58 +4,69 @@ import * as S from "./styles";
 
 export default function Error() {
   const title: string = "Lee DongHyeon";
-  const color = Array.from({ length: 12 }, () => {
-    return {
-      color: 34,
-    };
+  const font = Array.from({ length: 5 }, () => {
+    return { size: 100, color: "#2222222" };
   });
-  const [random, setRandom] = useState<any>(color);
+  const [random, setRandom] = useState<any>(font);
 
   useEffect(() => {
     const id = setInterval(() => {
       setRandom(
         random.map(() => ({
-          color: getRandomIntInclusive(0, 255),
+          color: "#" + Math.round(Math.random() * 0xffffff).toString(16),
+          size: getRandomIntInclusive(10, 150),
         }))
       );
-      console.log(random);
-    }, 200);
+    }, 150);
     return () => clearInterval(id);
   }, [random]);
 
   return (
     <>
       <S.ErrorDiv
-        bgColor1={random[9].color}
-        bgColor2={random[10].color}
-        bgColor3={random[11].color}
+        style={{
+          background: `${random[4].color}`,
+        }}
       >
-        <S.Top>
-          <S.Contents
-            color1={random[0].color}
-            color2={random[1].color}
-            color3={random[2].color}
-          >
-            {title}
-          </S.Contents>
-        </S.Top>
         <S.Title>
-          <S.Contents
-            color1={random[3].color}
-            color2={random[4].color}
-            color3={random[5].color}
+          <span
+            style={{
+              fontSize: `${random[0].size}px`,
+              background: `${random[0].color}`,
+            }}
           >
             {title}
-          </S.Contents>
+          </span>
         </S.Title>
-        <S.Bottom>
-          <S.Contents
-            color1={random[6].color}
-            color2={random[7].color}
-            color3={random[8].color}
+        <S.Top>
+          <span
+            style={{
+              fontSize: `${random[1].size}px`,
+              background: `${random[1].color}`,
+            }}
           >
             {title}
-          </S.Contents>
+          </span>
+        </S.Top>
+        <S.Center>
+          <span
+            style={{
+              fontSize: `${random[2].size}px`,
+              background: `${random[2].color}`,
+            }}
+          >
+            {title}
+          </span>
+        </S.Center>
+        <S.Bottom>
+          <span
+            style={{
+              fontSize: `${random[3].size}px`,
+              background: `${random[3].color}`,
+            }}
+          >
+            {title}
+          </span>
         </S.Bottom>
       </S.ErrorDiv>
     </>
