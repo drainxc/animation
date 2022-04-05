@@ -3,14 +3,13 @@ import { getRandomIntInclusive } from "../../lib/function/random";
 import * as S from "./styles";
 
 export default function Error() {
-  const title: string = "Lee DongHyeon";
-  const font = Array.from({ length: 5 }, () => {
+  const font: any = Array.from({ length: 5 }, () => {
     return { size: 100, color: "#2222222" };
   });
   const [random, setRandom] = useState<any>(font);
 
   useEffect(() => {
-    const id = setInterval(() => {
+    const id: any = setInterval(() => {
       setRandom(
         random.map(() => ({
           color: "#" + Math.round(Math.random() * 0xffffff).toString(16),
@@ -21,6 +20,19 @@ export default function Error() {
     return () => clearInterval(id);
   }, [random]);
 
+  const spans: any = Array.from({ length: 4 }, (t, i) => {
+    return (
+      <span
+        style={{
+          fontSize: `${random[i].size}px`,
+          background: `${random[i].color}`,
+        }}
+      >
+        Lee DongHyeon
+      </span>
+    );
+  });
+
   return (
     <>
       <S.ErrorDiv
@@ -28,46 +40,10 @@ export default function Error() {
           background: `${random[4].color}`,
         }}
       >
-        <S.Title>
-          <span
-            style={{
-              fontSize: `${random[0].size}px`,
-              background: `${random[0].color}`,
-            }}
-          >
-            {title}
-          </span>
-        </S.Title>
-        <S.Top>
-          <span
-            style={{
-              fontSize: `${random[1].size}px`,
-              background: `${random[1].color}`,
-            }}
-          >
-            {title}
-          </span>
-        </S.Top>
-        <S.Center>
-          <span
-            style={{
-              fontSize: `${random[2].size}px`,
-              background: `${random[2].color}`,
-            }}
-          >
-            {title}
-          </span>
-        </S.Center>
-        <S.Bottom>
-          <span
-            style={{
-              fontSize: `${random[3].size}px`,
-              background: `${random[3].color}`,
-            }}
-          >
-            {title}
-          </span>
-        </S.Bottom>
+        <S.Title>{spans[0]}</S.Title>
+        <S.Top>{spans[1]}</S.Top>
+        <S.Center>{spans[2]}</S.Center>
+        <S.Bottom>{spans[3]}</S.Bottom>
       </S.ErrorDiv>
     </>
   );
