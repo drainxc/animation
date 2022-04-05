@@ -4,14 +4,12 @@ import * as S from "./styles";
 
 export default function Error() {
   const title: string = "Lee DongHyeon";
-  const color = Array.from({ length: 9 }, (t, i) => {
+  const color = Array.from({ length: 12 }, () => {
     return {
-      color: 0,
+      color: 34,
     };
   });
-
   const [random, setRandom] = useState<any>(color);
-  const [count, setCount] = useState(0);
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -20,21 +18,18 @@ export default function Error() {
           color: getRandomIntInclusive(0, 255),
         }))
       );
-    }, 300);
+      console.log(random);
+    }, 200);
     return () => clearInterval(id);
   }, [random]);
 
-  function counting() {
-    setInterval(() => {
-      setCount(count + 1);
-    }, 300);
-  }
-
-  counting();
-
   return (
     <>
-      <S.ErrorDiv>
+      <S.ErrorDiv
+        bgColor1={random[9].color}
+        bgColor2={random[10].color}
+        bgColor3={random[11].color}
+      >
         <S.Top>
           <S.Contents
             color1={random[0].color}
