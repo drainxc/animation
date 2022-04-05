@@ -7,8 +7,7 @@ export const ErrorDiv = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-
-  /* animation: glitchErrorPage 0.2s linear infinite; */
+  animation: glitchErrorPage 0.2s linear infinite;
 
   div {
     position: absolute;
@@ -25,22 +24,24 @@ export const ErrorDiv = styled.div`
     0% {
       transform: translate(0, 0);
     }
+
+    40% {
+      transform: translate(25px, 0);
+    }
+
+    90% {
+      transform: translate(0, 30px);
+    }
     10%,
     50%,
-    40% {
-      transform: translate(5px, 0);
+    30% {
+      transform: translate(0, -18px);
     }
     20%,
     60%,
     70%,
-    90% {
-      transform: translate(0, 5px);
-    }
-    30% {
-      transform: translate(0, -20px);
-    }
     80% {
-      transform: translate(-40px, 0);
+      transform: translate(-35px, 0);
     }
   }
 `;
@@ -113,17 +114,17 @@ export const Top = styled.div`
   @keyframes glitchTop {
     4%,
     46% {
-      transform: translate(-3px, 0);
+      transform: translate(-15px, 0);
     }
     6%,
     42% {
-      transform: translate(3px, 0);
+      transform: translate(15px, 0);
     }
     8% {
-      transform: translate(-5px, 0);
+      transform: translate(-25px, 0);
     }
     44% {
-      transform: translate(0px, -7px);
+      transform: translate(0px, -35px);
     }
     30%,
     72% {
