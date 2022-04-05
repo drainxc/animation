@@ -3,10 +3,11 @@ import { getRandomIntInclusive } from "../../lib/function/random";
 import * as S from "./styles";
 
 export default function Error() {
-  const font: any = Array.from({ length: 5 }, () => {
-    return { size: 100, color: "#2222222" };
+  const font: any = Array.from({ length: 4 }, () => {
+    return { size: 100, color: "#2222222", letterSpacing: "0px" };
   });
   const [random, setRandom] = useState<any>(font);
+  const [bgColor, setBgColor] = useState<string>("#ffffff");
 
   useEffect(() => {
     const id: any = setInterval(() => {
@@ -14,10 +15,17 @@ export default function Error() {
         random.map(() => ({
           color: "#" + Math.round(Math.random() * 0xffffff).toString(16),
           size: getRandomIntInclusive(10, 150),
+          letterSpacing: `${getRandomIntInclusive(-100, 100)}` + "px",
         }))
       );
     }, 150);
-    return () => clearInterval(id);
+    const backGroundColor: any = setInterval(() => {
+      setBgColor("#" + Math.round(Math.random() * 0xffffff).toString(16));
+    }, 80);
+    return () => {
+      clearInterval(id);
+      clearInterval(backGroundColor);
+    };
   }, [random]);
 
   const spans: any = Array.from({ length: 4 }, (t, i) => {
@@ -26,6 +34,7 @@ export default function Error() {
         style={{
           fontSize: `${random[i].size}px`,
           background: `${random[i].color}`,
+          letterSpacing: `${random[i].letterSpacing}`,
         }}
       >
         Lee DongHyeon
@@ -37,7 +46,7 @@ export default function Error() {
     <>
       <S.ErrorDiv
         style={{
-          background: `${random[4].color}`,
+          background: `${bgColor}`,
         }}
       >
         <S.Title>{spans[0]}</S.Title>
