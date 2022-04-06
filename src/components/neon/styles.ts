@@ -24,16 +24,19 @@ export const Title = styled.div<{
   @keyframes glow {
     0%,
     100% {
-      text-shadow: 0 -10px 15px ${(props) => props.color1},
-        0px 10px 15px ${(props) => props.color3};
+      text-shadow: 0 0 8px #ffffff, 0 -10px 25px ${(props) => props.color1},
+        -10px 10px 25px ${(props) => props.color2},
+        10px 10px 25px ${(props) => props.color1};
     }
     33% {
-      text-shadow: 0 -10px 15px ${(props) => props.color2},
-        0px 10px 15px ${(props) => props.color1};
+      text-shadow: 0 0 8px #ffffff, 0 -10px 25px ${(props) => props.color2},
+        -10px 10px 25px ${(props) => props.color3},
+        10px 10px 25px ${(props) => props.color2};
     }
     66% {
-      text-shadow: 0 -10px 15px ${(props) => props.color3},
-        0px 10px 15px ${(props) => props.color2};
+      text-shadow: 0 0 8px #ffffff, 0 -10px 25px ${(props) => props.color3},
+        -10px 10px 25px ${(props) => props.color1},
+        10px 10px 25px ${(props) => props.color3};
     }
   }
 `;
