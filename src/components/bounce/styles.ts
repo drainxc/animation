@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Background = styled.body`
+export const Background: any = styled.body`
   position: fixed;
   z-index: -1;
   left: 0;
@@ -11,7 +11,7 @@ export const Background = styled.body`
   display: flex;
 `;
 
-export const BallAnimation = styled.div`
+export const BallAnimation: any = styled.div`
   position: fixed;
   left: 50%;
   top: 50%;
@@ -22,7 +22,7 @@ export const BallAnimation = styled.div`
   overflow: hidden;
 `;
 
-export const Title = styled.div`
+export const Title: any = styled.div`
   position: fixed;
   left: 50%;
   top: 50%;
@@ -33,7 +33,7 @@ export const Title = styled.div`
   color: #222222;
 `;
 
-export const Move = styled.div`
+export const Move: any = styled.div`
   /* background-color: blue; */
   position: absolute;
   height: 75px;
@@ -52,7 +52,7 @@ export const Move = styled.div`
   } // 왼쪽으로 650px만큼 움직이기
 `;
 
-export const Up = styled.div`
+export const Up: any = styled.div`
   /* background-color: green; */
   position: absolute;
   height: 75px;
@@ -81,7 +81,7 @@ export const Up = styled.div`
   } // 시간에 따라 위로 점프하기
 `;
 
-export const Down = styled.div`
+export const Down: any = styled.div`
   /* background-color: yellow; */
   position: absolute;
   height: 75px;
@@ -110,7 +110,7 @@ export const Down = styled.div`
   } // 점프한 후 떨어지기
 `;
 
-export const Ball = styled.div`
+export const Ball: any = styled.div`
   border-radius: 50%;
   background-color: #222222;
   position: absolute;

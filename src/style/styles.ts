@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 
-const GlovalStyle = createGlobalStyle`
+const GlovalStyle: any = createGlobalStyle`
     ${reset};
     body {
       -webkit-user-select: none;
