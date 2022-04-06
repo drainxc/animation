@@ -19,7 +19,7 @@ export default function Neon() {
     <>
       <S.MainDiv>
         {Title.map((res: string, i: number) => (
-          <S.Title style={{ animationDelay: `${i * 0.1}s` }}>{res}</S.Title>
+          <S.Title style={{ animationDelay: `${i * 0.05}s` }}>{res}</S.Title>
         ))}
       </S.MainDiv>
     </>

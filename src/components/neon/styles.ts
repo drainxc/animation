@@ -15,11 +15,18 @@ export const Title = styled.div`
   font-size: 100px;
   font-family: "Pacifico", cursive;
   font-weight: 900;
-  animation: glow 1s ease-in-out both infinite;
+  animation: glow 1.75s linear infinite;
 
   @keyframes glow {
-    50% {
-      text-shadow: 0 -15px 25px cyan, -15px 15px 25px yellowgreen;
+    0%,
+    100% {
+      text-shadow: 0 -10px 15px #FFFFFF, 0px 10px 15px #6DD5FA;
+    }
+    33% {
+      text-shadow: 0 -10px 15px #2980B9, 0px 10px 15px #FFFFFF;
+    }
+    66% {
+        text-shadow: 0 -10px 15px #6DD5FA, 0px 10px 15px #2980B9;
     }
   }
 `;
