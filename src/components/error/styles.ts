@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ErrorDiv: any = styled.div`
+export const ErrorDiv = styled.div`
   position: fixed;
   display: flex;
   justify-content: center;
@@ -46,7 +46,7 @@ export const ErrorDiv: any = styled.div`
   }
 `;
 
-export const Bottom: any = styled.div`
+export const Bottom = styled.div`
   animation: glitchBottom 2.4s linear infinite;
   clip-path: polygon(0 67%, 200% 67%, 200% 200%, 0 200%);
   -webkit-clip-path: clip-path;
@@ -74,7 +74,7 @@ export const Bottom: any = styled.div`
   }
 `;
 
-export const Center: any = styled.div`
+export const Center = styled.div`
   animation: glitch 1.5s linear infinite;
   clip-path: polygon(0 33%, 200% 0, 200% 67%, 0 67%);
   -webkit-clip-path: clip-path;
@@ -102,7 +102,7 @@ export const Center: any = styled.div`
   }
 `;
 
-export const Top: any = styled.div`
+export const Top = styled.div`
   animation: glitchTop 2s linear infinite;
   clip-path: polygon(0 0, 200% 0, 200% 33%, 0 33%);
   -webkit-clip-path: clip-path;
@@ -134,7 +134,7 @@ export const Top: any = styled.div`
   }
 `;
 
-export const Title: any = styled.div`
+export const Title = styled.div`
   mix-blend-mode: normal;
   opacity: 0.5;
 `;
