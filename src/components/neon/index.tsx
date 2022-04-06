@@ -3,23 +3,23 @@ import * as S from "./styles";
 export default function Neon() {
   const Title: any = [
     "L",
-    "E",
-    "E",
+    "e",
+    "e",
     "D",
-    "O",
-    "N",
-    "G",
+    "o",
+    "n",
+    "g",
     "H",
-    "Y",
-    "E",
-    "O",
-    "N",
+    "y",
+    "e",
+    "o",
+    "n",
   ];
   return (
     <>
       <S.MainDiv>
-        {Title.map((res: string) => (
-          <span>{res}</span>
+        {Title.map((res: string, i: number) => (
+          <S.Title style={{ animationDelay: `${i * 0.1}s` }}>{res}</S.Title>
         ))}
       </S.MainDiv>
     </>
