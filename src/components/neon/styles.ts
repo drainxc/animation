@@ -10,7 +10,11 @@ export const MainDiv = styled.div`
   background-color: #222222;
 `;
 
-export const Title = styled.div`
+export const Title = styled.div<{
+  color1: string;
+  color2: string;
+  color3: string;
+}>`
   color: #f2f2f2;
   font-size: 100px;
   font-family: "Pacifico", cursive;
@@ -20,13 +24,16 @@ export const Title = styled.div`
   @keyframes glow {
     0%,
     100% {
-      text-shadow: 0 -10px 15px #ffffff, 0px 10px 15px #6dd5fa;
+      text-shadow: 0 -10px 15px ${(props) => props.color1},
+        0px 10px 15px ${(props) => props.color3};
     }
     33% {
-      text-shadow: 0 -10px 15px #2980b9, 0px 10px 15px #ffffff;
+      text-shadow: 0 -10px 15px ${(props) => props.color2},
+        0px 10px 15px ${(props) => props.color1};
     }
     66% {
-      text-shadow: 0 -10px 15px #6dd5fa, 0px 10px 15px #2980b9;
+      text-shadow: 0 -10px 15px ${(props) => props.color3},
+        0px 10px 15px ${(props) => props.color2};
     }
   }
 `;
