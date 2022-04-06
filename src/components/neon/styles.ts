@@ -20,13 +20,29 @@ export const Title = styled.div`
   @keyframes glow {
     0%,
     100% {
-      text-shadow: 0 -10px 15px #FFFFFF, 0px 10px 15px #6DD5FA;
+      text-shadow: 0 -10px 15px #ffffff, 0px 10px 15px #6dd5fa;
     }
     33% {
-      text-shadow: 0 -10px 15px #2980B9, 0px 10px 15px #FFFFFF;
+      text-shadow: 0 -10px 15px #2980b9, 0px 10px 15px #ffffff;
     }
     66% {
-        text-shadow: 0 -10px 15px #6DD5FA, 0px 10px 15px #2980B9;
+      text-shadow: 0 -10px 15px #6dd5fa, 0px 10px 15px #2980b9;
+    }
+  }
+`;
+
+export const Contents = styled.div`
+  animation: typing 1.2s linear;
+  opacity: 0;
+  animation-fill-mode: forwards;
+
+  @keyframes typing {
+    0% {
+      opacity: 0;
+    }
+    10%,
+    100% {
+      opacity: 1;
     }
   }
 `;
