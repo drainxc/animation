@@ -2,45 +2,55 @@ import { useEffect, useState } from "react";
 import { getRandomIntInclusive } from "../../lib/function/random";
 import * as S from "./styles";
 
-export default function Error() {
-  const font: any = Array.from({ length: 4 }, () => {
+export default function Error(): JSX.Element {
+  type fontType = {
+    size: number;
+    color: string;
+    letterSpacing: string;
+  };
+  const font: fontType[] = Array.from({ length: 4 }, () => {
     return { size: 100, color: "#2222222", letterSpacing: "0px" };
   });
-  const [random, setRandom] = useState<any>(font);
+  const [random, setRandom] = useState<fontType[]>(font);
   const [bgColor, setBgColor] = useState<string>("#ffffff");
 
   useEffect(() => {
-    const id: any = setInterval(() => {
+    const id = setInterval(() => {
       setRandom(
         random.map(() => ({
           color: "#" + Math.round(Math.random() * 0xffffff).toString(16),
           size: getRandomIntInclusive(10, 150),
-          letterSpacing: `${getRandomIntInclusive(-100, 100)}` + "px",
+          letterSpacing: `${getRandomIntInclusive(-100, 100)}px`,
         }))
       );
     }, 150);
-    const backGroundColor: any = setInterval(() => {
+
+    const backGroundColor = setInterval(() => {
       setBgColor("#" + Math.round(Math.random() * 0xffffff).toString(16));
     }, 80);
+
     return () => {
       clearInterval(id);
       clearInterval(backGroundColor);
     };
   }, [random]);
 
-  const spans: any = Array.from({ length: 4 }, (t, i) => {
-    return (
-      <span
-        style={{
-          fontSize: `${random[i].size}px`,
-          background: `${random[i].color}`,
-          letterSpacing: `${random[i].letterSpacing}`,
-        }}
-      >
-        Lee DongHyeon
-      </span>
-    );
-  });
+  const spans: JSX.Element[] = Array.from(
+    { length: 4 },
+    (t: void, i: number) => {
+      return (
+        <span
+          style={{
+            fontSize: `${random[i].size}px`,
+            background: `${random[i].color}`,
+            letterSpacing: `${random[i].letterSpacing}`,
+          }}
+        >
+          Lee DongHyeon
+        </span>
+      );
+    }
+  );
 
   return (
     <>

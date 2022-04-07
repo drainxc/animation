@@ -2,9 +2,9 @@ import { useState } from "react";
 import { zipperScroll } from "../../lib/function/zipperAnimation";
 import * as S from "./style";
 
-export default function Zipper() {
+export default function Zipper(): JSX.Element {
   const divAmount: number = 20; // div 개수
-  const divs: any = Array.from({ length: divAmount }, (t, i) => {
+  const divs: number[] = Array.from({ length: divAmount }, (t, i) => {
     return i;
   }); // map함수용 div 배열 생성
   const style: string = `${document.body.clientWidth / divAmount}px`; // div 가로 크기 조정

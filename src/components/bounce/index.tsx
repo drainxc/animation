@@ -1,6 +1,6 @@
 import * as S from "./styles";
 
-export default function Bounce() {
+export default function Bounce(): JSX.Element {
   return (
     <>
       <S.Background>
