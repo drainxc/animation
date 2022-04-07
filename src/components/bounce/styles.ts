@@ -18,7 +18,7 @@ export const BallAnimation = styled.div`
   transform: translate(-50%, -50%);
   height: 700px;
   width: 780px;
-  background-color: #D0D0D0;
+  background-color: #d0d0d0;
   overflow: hidden;
 `;
 
@@ -31,6 +31,25 @@ export const Title = styled.div`
   font-weight: 500;
   font-size: 100px;
   color: #222222;
+
+  animation: title 3s ease-in infinite;
+
+  @keyframes title {
+    0%,
+    19%,
+    30%,
+    49%,
+    60%,
+    79%,
+    85%,
+    100% {
+      transform: translate(-50%, calc(-50%));
+    }
+    23%,
+    53% {
+      transform: translate(-50%, calc(-50% + 1rem));
+    }
+  }
 `;
 
 export const Move = styled.div`
@@ -65,7 +84,7 @@ export const Up = styled.div`
   @keyframes up {
     0%,
     20% {
-      transform: translateY(0rem);
+      transform: translateY(0);
     }
     35%,
     50% {
