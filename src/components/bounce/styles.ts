@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Background = styled.body`
   position: fixed;
@@ -23,31 +23,52 @@ export const BallAnimation = styled.div`
 `;
 
 export const Title = styled.div`
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-family: "Pacifico", cursive;
   font-weight: 500;
   font-size: 100px;
   color: #222222;
+  font-family: "Pacifico", cursive;
+`;
 
-  animation: title 3s ease-in infinite;
+export const FirstName = styled.div`
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+`;
 
-  @keyframes title {
+export const MiddleName = styled.div`
+  position: fixed;
+  top: 50%;
+
+  animation: middle 3s linear infinite;
+
+  @keyframes middle {
     0%,
-    19%,
-    30%,
     49%,
     60%,
-    79%,
-    85%,
     100% {
       transform: translate(-50%, calc(-50%));
     }
-    23%,
     53% {
-      transform: translate(-50%, calc(-50% + 1rem));
+      transform: translate(-50%, calc(-50% + 0.5rem));
+    }
+  }
+`;
+
+export const LastName = styled.div`
+  position: fixed;
+  top: 50%;
+
+  animation: last 3s linear infinite;
+
+  @keyframes last {
+    0%,
+    19%,
+    30%,
+    100% {
+      transform: translate(-50%, calc(-50%));
+    }
+    23% {
+      transform: translate(-50%, calc(-50% + 0.5rem));
     }
   }
 `;

@@ -37,7 +37,7 @@ export default function Error(): JSX.Element {
 
   const spans: JSX.Element[] = Array.from(
     { length: 4 },
-    (t: void, i: number) => {
+    (t: undefined, i: number) => {
       return (
         <span
           style={{

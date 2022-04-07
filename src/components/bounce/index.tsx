@@ -1,3 +1,4 @@
+import Router from "../../router/routes";
 import * as S from "./styles";
 
 export default function Bounce(): JSX.Element {
@@ -13,7 +14,11 @@ export default function Bounce(): JSX.Element {
             </S.Up>
           </S.Move>
         </S.BallAnimation>
-        <S.Title>Lee DongHyeon</S.Title>
+        <S.Title>
+          <S.FirstName style={{ left: "37%" }}>Lee</S.FirstName>
+          <S.MiddleName style={{ left: "47.8%" }}>Dong</S.MiddleName>
+          <S.LastName style={{ left: "61%" }}>Hyeon</S.LastName>
+        </S.Title>
       </S.Background>
     </>
   );
